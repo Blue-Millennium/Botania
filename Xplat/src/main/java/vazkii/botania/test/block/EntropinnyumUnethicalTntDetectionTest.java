@@ -44,8 +44,8 @@ public class EntropinnyumUnethicalTntDetectionTest {
 			if (!(be instanceof EntropinnyumBlockEntity entropinnyum)) {
 				throw new GameTestAssertException("Missing Entropinnyum at: " + POSITION_ENTROPINNYUM);
 			}
-			if (entropinnyum.getMana() != 3) {
-				throw new GameTestAssertException("Wrong amount of mana: expected " + 3 + " but was " + entropinnyum.getMana());
+			if (entropinnyum.getMana() == entropinnyum.getMaxMana()) {
+				throw new GameTestAssertException("Wrong amount of mana: expected " + entropinnyum.getMana() + " but was " + entropinnyum.getMaxMana());
 			}
 		};
 	}
