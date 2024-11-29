@@ -22,13 +22,15 @@ structure it's placed in, also further customizable with datapacks. Huuuuge
 thanks to Wormbo for a lot of work on this feature!
 * Change: More readable color in Loonium tooltip
 * Change: Pasture seed spread is no longer restricted to a single Y-level, and replacing existing dirt-like blocks is handled by block tag `botania:pasture_seed_replaceable`
-* change: Hopperhocks now also apply delay from being planted on podzol or mycelium to picking up recipe outputs, such as from mana infusion
+* Change: Hopperhocks now also apply delay from being planted on podzol or mycelium to picking up recipe outputs, such as from mana infusion
+* Change: Blocks that are not covered by the default unethical TNT check, but can produce TNT the Entropinnyum recognizes, can be specified in the new `botania:unethical_tnt_check` block tag to detect when TNT is duplicated from them (contains `ae2:tiny_tnt` by default)
 * Fix: Akashic Tome name is rendered correctly again on the Lexica Botania
 * Fix: Slightly improved tick performance impact of mana/corporea sparks
 * Fix: Halloween Easter egg on Tiny Potato also works in item form
 * Fix: Dandelifeon no longer sometimes consumes blocks that aren't cellular blocks
 * Fix: Protection effect of the Benevolent Goddess Charm also works on Fabric when the player dies from the explosion
 * Language update:
+  * de_de completed (thanks to Kartabass and PssbleTrngle for reviewing)
   * ru_ru updated (krumplerban)
   * zh_cn updated (Dawnwalker666)
 
