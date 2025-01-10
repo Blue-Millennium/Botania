@@ -50,6 +50,7 @@ import vazkii.botania.common.block.mana.*;
 import vazkii.botania.common.block.red_string.*;
 import vazkii.botania.common.entity.EnderAirBottleEntity;
 import vazkii.botania.common.entity.VineBallEntity;
+import vazkii.botania.common.helper.ColorHelper;
 import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.common.item.block.BlockItemWithSpecialRenderer;
 import vazkii.botania.common.item.block.TinyPotatoBlockItem;
@@ -683,10 +684,10 @@ public final class BotaniaBlocks {
 				Triple.of(BotaniaBlocks::getPottedShinyFlower, LibBlockNames.POTTED_PREFIX, LibBlockNames.SHINY_FLOWER_SUFFIX),
 				Triple.of(BotaniaBlocks::getPottedMushroom, LibBlockNames.POTTED_PREFIX, LibBlockNames.MUSHROOM_SUFFIX)
 		).forEach(coloredBlockRegistration -> {
-			for (DyeColor dyeColor : DyeColor.values()) {
+			ColorHelper.supportedColors().forEach(dyeColor -> {
 				r.accept(coloredBlockRegistration.getLeft().apply(dyeColor),
 						prefix(coloredBlockRegistration.getMiddle() + dyeColor.getName() + coloredBlockRegistration.getRight()));
-			}
+			});
 		});
 
 		r.accept(defaultAltar, prefix(LibBlockNames.APOTHECARY_PREFIX + PetalApothecaryBlock.Variant.DEFAULT.name().toLowerCase(Locale.ROOT)));
@@ -1081,102 +1082,18 @@ public final class BotaniaBlocks {
 
 	public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r) {
 		Item.Properties props = BotaniaItems.defaultBuilder();
-		r.accept(new BlockItem(whiteFlower, props), BuiltInRegistries.BLOCK.getKey(whiteFlower));
-		r.accept(new BlockItem(orangeFlower, props), BuiltInRegistries.BLOCK.getKey(orangeFlower));
-		r.accept(new BlockItem(magentaFlower, props), BuiltInRegistries.BLOCK.getKey(magentaFlower));
-		r.accept(new BlockItem(lightBlueFlower, props), BuiltInRegistries.BLOCK.getKey(lightBlueFlower));
-		r.accept(new BlockItem(yellowFlower, props), BuiltInRegistries.BLOCK.getKey(yellowFlower));
-		r.accept(new BlockItem(limeFlower, props), BuiltInRegistries.BLOCK.getKey(limeFlower));
-		r.accept(new BlockItem(pinkFlower, props), BuiltInRegistries.BLOCK.getKey(pinkFlower));
-		r.accept(new BlockItem(grayFlower, props), BuiltInRegistries.BLOCK.getKey(grayFlower));
-		r.accept(new BlockItem(lightGrayFlower, props), BuiltInRegistries.BLOCK.getKey(lightGrayFlower));
-		r.accept(new BlockItem(cyanFlower, props), BuiltInRegistries.BLOCK.getKey(cyanFlower));
-		r.accept(new BlockItem(purpleFlower, props), BuiltInRegistries.BLOCK.getKey(purpleFlower));
-		r.accept(new BlockItem(blueFlower, props), BuiltInRegistries.BLOCK.getKey(blueFlower));
-		r.accept(new BlockItem(brownFlower, props), BuiltInRegistries.BLOCK.getKey(brownFlower));
-		r.accept(new BlockItem(greenFlower, props), BuiltInRegistries.BLOCK.getKey(greenFlower));
-		r.accept(new BlockItem(redFlower, props), BuiltInRegistries.BLOCK.getKey(redFlower));
-		r.accept(new BlockItem(blackFlower, props), BuiltInRegistries.BLOCK.getKey(blackFlower));
-		r.accept(new BlockItem(whiteShinyFlower, props), BuiltInRegistries.BLOCK.getKey(whiteShinyFlower));
-		r.accept(new BlockItem(orangeShinyFlower, props), BuiltInRegistries.BLOCK.getKey(orangeShinyFlower));
-		r.accept(new BlockItem(magentaShinyFlower, props), BuiltInRegistries.BLOCK.getKey(magentaShinyFlower));
-		r.accept(new BlockItem(lightBlueShinyFlower, props), BuiltInRegistries.BLOCK.getKey(lightBlueShinyFlower));
-		r.accept(new BlockItem(yellowShinyFlower, props), BuiltInRegistries.BLOCK.getKey(yellowShinyFlower));
-		r.accept(new BlockItem(limeShinyFlower, props), BuiltInRegistries.BLOCK.getKey(limeShinyFlower));
-		r.accept(new BlockItem(pinkShinyFlower, props), BuiltInRegistries.BLOCK.getKey(pinkShinyFlower));
-		r.accept(new BlockItem(grayShinyFlower, props), BuiltInRegistries.BLOCK.getKey(grayShinyFlower));
-		r.accept(new BlockItem(lightGrayShinyFlower, props), BuiltInRegistries.BLOCK.getKey(lightGrayShinyFlower));
-		r.accept(new BlockItem(cyanShinyFlower, props), BuiltInRegistries.BLOCK.getKey(cyanShinyFlower));
-		r.accept(new BlockItem(purpleShinyFlower, props), BuiltInRegistries.BLOCK.getKey(purpleShinyFlower));
-		r.accept(new BlockItem(blueShinyFlower, props), BuiltInRegistries.BLOCK.getKey(blueShinyFlower));
-		r.accept(new BlockItem(brownShinyFlower, props), BuiltInRegistries.BLOCK.getKey(brownShinyFlower));
-		r.accept(new BlockItem(greenShinyFlower, props), BuiltInRegistries.BLOCK.getKey(greenShinyFlower));
-		r.accept(new BlockItem(redShinyFlower, props), BuiltInRegistries.BLOCK.getKey(redShinyFlower));
-		r.accept(new BlockItem(blackShinyFlower, props), BuiltInRegistries.BLOCK.getKey(blackShinyFlower));
-		r.accept(new BlockItem(whiteFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(whiteFloatingFlower));
-		r.accept(new BlockItem(orangeFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(orangeFloatingFlower));
-		r.accept(new BlockItem(magentaFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(magentaFloatingFlower));
-		r.accept(new BlockItem(lightBlueFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(lightBlueFloatingFlower));
-		r.accept(new BlockItem(yellowFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(yellowFloatingFlower));
-		r.accept(new BlockItem(limeFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(limeFloatingFlower));
-		r.accept(new BlockItem(pinkFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(pinkFloatingFlower));
-		r.accept(new BlockItem(grayFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(grayFloatingFlower));
-		r.accept(new BlockItem(lightGrayFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(lightGrayFloatingFlower));
-		r.accept(new BlockItem(cyanFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(cyanFloatingFlower));
-		r.accept(new BlockItem(purpleFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(purpleFloatingFlower));
-		r.accept(new BlockItem(blueFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(blueFloatingFlower));
-		r.accept(new BlockItem(brownFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(brownFloatingFlower));
-		r.accept(new BlockItem(greenFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(greenFloatingFlower));
-		r.accept(new BlockItem(redFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(redFloatingFlower));
-		r.accept(new BlockItem(blackFloatingFlower, props), BuiltInRegistries.BLOCK.getKey(blackFloatingFlower));
-		r.accept(new BlockItem(petalBlockWhite, props), BuiltInRegistries.BLOCK.getKey(petalBlockWhite));
-		r.accept(new BlockItem(petalBlockOrange, props), BuiltInRegistries.BLOCK.getKey(petalBlockOrange));
-		r.accept(new BlockItem(petalBlockMagenta, props), BuiltInRegistries.BLOCK.getKey(petalBlockMagenta));
-		r.accept(new BlockItem(petalBlockLightBlue, props), BuiltInRegistries.BLOCK.getKey(petalBlockLightBlue));
-		r.accept(new BlockItem(petalBlockYellow, props), BuiltInRegistries.BLOCK.getKey(petalBlockYellow));
-		r.accept(new BlockItem(petalBlockLime, props), BuiltInRegistries.BLOCK.getKey(petalBlockLime));
-		r.accept(new BlockItem(petalBlockPink, props), BuiltInRegistries.BLOCK.getKey(petalBlockPink));
-		r.accept(new BlockItem(petalBlockGray, props), BuiltInRegistries.BLOCK.getKey(petalBlockGray));
-		r.accept(new BlockItem(petalBlockSilver, props), BuiltInRegistries.BLOCK.getKey(petalBlockSilver));
-		r.accept(new BlockItem(petalBlockCyan, props), BuiltInRegistries.BLOCK.getKey(petalBlockCyan));
-		r.accept(new BlockItem(petalBlockPurple, props), BuiltInRegistries.BLOCK.getKey(petalBlockPurple));
-		r.accept(new BlockItem(petalBlockBlue, props), BuiltInRegistries.BLOCK.getKey(petalBlockBlue));
-		r.accept(new BlockItem(petalBlockBrown, props), BuiltInRegistries.BLOCK.getKey(petalBlockBrown));
-		r.accept(new BlockItem(petalBlockGreen, props), BuiltInRegistries.BLOCK.getKey(petalBlockGreen));
-		r.accept(new BlockItem(petalBlockRed, props), BuiltInRegistries.BLOCK.getKey(petalBlockRed));
-		r.accept(new BlockItem(petalBlockBlack, props), BuiltInRegistries.BLOCK.getKey(petalBlockBlack));
-		r.accept(new BlockItem(whiteMushroom, props), BuiltInRegistries.BLOCK.getKey(whiteMushroom));
-		r.accept(new BlockItem(orangeMushroom, props), BuiltInRegistries.BLOCK.getKey(orangeMushroom));
-		r.accept(new BlockItem(magentaMushroom, props), BuiltInRegistries.BLOCK.getKey(magentaMushroom));
-		r.accept(new BlockItem(lightBlueMushroom, props), BuiltInRegistries.BLOCK.getKey(lightBlueMushroom));
-		r.accept(new BlockItem(yellowMushroom, props), BuiltInRegistries.BLOCK.getKey(yellowMushroom));
-		r.accept(new BlockItem(limeMushroom, props), BuiltInRegistries.BLOCK.getKey(limeMushroom));
-		r.accept(new BlockItem(pinkMushroom, props), BuiltInRegistries.BLOCK.getKey(pinkMushroom));
-		r.accept(new BlockItem(grayMushroom, props), BuiltInRegistries.BLOCK.getKey(grayMushroom));
-		r.accept(new BlockItem(lightGrayMushroom, props), BuiltInRegistries.BLOCK.getKey(lightGrayMushroom));
-		r.accept(new BlockItem(cyanMushroom, props), BuiltInRegistries.BLOCK.getKey(cyanMushroom));
-		r.accept(new BlockItem(purpleMushroom, props), BuiltInRegistries.BLOCK.getKey(purpleMushroom));
-		r.accept(new BlockItem(blueMushroom, props), BuiltInRegistries.BLOCK.getKey(blueMushroom));
-		r.accept(new BlockItem(brownMushroom, props), BuiltInRegistries.BLOCK.getKey(brownMushroom));
-		r.accept(new BlockItem(greenMushroom, props), BuiltInRegistries.BLOCK.getKey(greenMushroom));
-		r.accept(new BlockItem(redMushroom, props), BuiltInRegistries.BLOCK.getKey(redMushroom));
-		r.accept(new BlockItem(blackMushroom, props), BuiltInRegistries.BLOCK.getKey(blackMushroom));
-		r.accept(new BlockItem(doubleFlowerWhite, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerWhite));
-		r.accept(new BlockItem(doubleFlowerOrange, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerOrange));
-		r.accept(new BlockItem(doubleFlowerMagenta, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerMagenta));
-		r.accept(new BlockItem(doubleFlowerLightBlue, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerLightBlue));
-		r.accept(new BlockItem(doubleFlowerYellow, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerYellow));
-		r.accept(new BlockItem(doubleFlowerLime, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerLime));
-		r.accept(new BlockItem(doubleFlowerPink, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerPink));
-		r.accept(new BlockItem(doubleFlowerGray, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerGray));
-		r.accept(new BlockItem(doubleFlowerLightGray, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerLightGray));
-		r.accept(new BlockItem(doubleFlowerCyan, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerCyan));
-		r.accept(new BlockItem(doubleFlowerPurple, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerPurple));
-		r.accept(new BlockItem(doubleFlowerBlue, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerBlue));
-		r.accept(new BlockItem(doubleFlowerBrown, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerBrown));
-		r.accept(new BlockItem(doubleFlowerGreen, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerGreen));
-		r.accept(new BlockItem(doubleFlowerRed, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerRed));
-		r.accept(new BlockItem(doubleFlowerBlack, props), BuiltInRegistries.BLOCK.getKey(doubleFlowerBlack));
+		Stream.<Function<DyeColor, Block>>of(
+				BotaniaBlocks::getFlower,
+				BotaniaBlocks::getShinyFlower,
+				BotaniaBlocks::getFloatingFlower,
+				BotaniaBlocks::getPetalBlock,
+				BotaniaBlocks::getMushroom,
+				BotaniaBlocks::getDoubleFlower
+		).forEach(
+				blockGetter -> ColorHelper.supportedColors().map(blockGetter).forEach(
+						block -> r.accept(new BlockItem(block, props), BuiltInRegistries.BLOCK.getKey(block))
+				)
+		);
 		r.accept(new BlockItem(defaultAltar, props), BuiltInRegistries.BLOCK.getKey(defaultAltar));
 		r.accept(new BlockItem(forestAltar, props), BuiltInRegistries.BLOCK.getKey(forestAltar));
 		r.accept(new BlockItem(plainsAltar, props), BuiltInRegistries.BLOCK.getKey(plainsAltar));
@@ -1850,7 +1767,7 @@ public final class BotaniaBlocks {
 	}
 
 	public static void registerFlowerPotPlants(BiConsumer<ResourceLocation, Supplier<? extends Block>> consumer) {
-		Stream.of(DyeColor.values()).forEach(dyeColor -> {
+		ColorHelper.supportedColors().forEach(dyeColor -> {
 			consumer.accept(prefix(dyeColor.getName() + MYSTICAL_FLOWER_SUFFIX), () -> getPottedFlower(dyeColor));
 			consumer.accept(prefix(dyeColor.getName() + SHINY_FLOWER_SUFFIX), () -> getPottedShinyFlower(dyeColor));
 			consumer.accept(prefix(dyeColor.getName() + MUSHROOM_SUFFIX), () -> getPottedMushroom(dyeColor));
