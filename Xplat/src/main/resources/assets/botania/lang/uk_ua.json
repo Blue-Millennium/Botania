@@ -399,7 +399,7 @@
     "item.botania.dice.poem2": "Приховані закони можливого результату,",
     "item.botania.dice.poem3": "Числа ведуть танець.",
   
-    "death.attack.botania-relic": "%s було покарано за використання реліквії, яка не належить йому",
+    "death.attack.botania.relic": "%s було покарано за використання реліквії, яка не належить йому",
     "death.attack.botania.key_explosion": "%2$s потонув %1$s у скарбах",
   
     "effect.botania.allure.description": "Подвоює швидкість риболовлі.",

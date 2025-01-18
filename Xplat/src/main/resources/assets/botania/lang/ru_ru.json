@@ -275,7 +275,7 @@
   "item.botania.dice.poem2": "Закон возможного исхода.",
   "item.botania.dice.poem3": "И числа отбивают ритм.",
 
-  "death.attack.botania-relic": "%s был наказан за использование чужой реликвии",
+  "death.attack.botania.relic": "%s был наказан за использование чужой реликвии",
   "death.attack.botania.key_explosion": "%2$s утопил %1$s в сокровищах",
   
   "effect.botania.allure.description": "Удваивает скорость рыбалки.",

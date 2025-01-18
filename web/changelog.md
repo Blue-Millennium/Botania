@@ -25,6 +25,8 @@ thanks to Wormbo for a lot of work on this feature!
 * Change: Pasture seed spread is no longer restricted to a single Y-level, and replacing existing dirt-like blocks is handled by block tag `botania:pasture_seed_replaceable`
 * Change: Hopperhocks now also apply delay from being planted on podzol or mycelium to picking up recipe outputs, such as from mana infusion
 * Change: Blocks that are not covered by the default unethical TNT check, but can produce TNT the Entropinnyum recognizes, can be specified in the new `botania:unethical_tnt_check` block tag to detect when TNT is duplicated from them (contains `ae2:tiny_tnt` by default)
+* Change: Reordered colored items in the creative inventory to match the new vanilla order since 1.19.3
+* Change: Fluid container items that were dropped onto a Petal Apothecary to fill it can be picked up by Hopperhocks immediately, similar to crafting result items
 * Fix: Akashic Tome name is rendered correctly again on the Lexica Botania
 * Fix: Slightly improved tick performance impact of mana/corporea sparks
 * Fix: Halloween Easter egg on Tiny Potato also works in item form
@@ -32,11 +34,12 @@ thanks to Wormbo for a lot of work on this feature!
 * Fix: Protection effect of the Benevolent Goddess Charm also works on Fabric when the player dies from the explosion
 * Fix: Redstone comparators no longer read signal strength 0 from special flowers other than the Thermalily
 * Fix: A comparator reading from a Thermalily through a solid block no longer keeps outputting a value after breaking the Thermalily
+* Fix: Potential crash issues in combination with mods that add colors have been resolved
 * Language update:
-  * de_de completed (thanks to Kartabass and PssbleTrngle for reviewing)
+  * de_de completed (Wormbo, thanks to Kartabass and PssbleTrngle for reviewing)
   * ko_kr updated (UnineVesiKass)
   * ru_ru updated (krumplerban)
-  * zh_cn updated (Dawnwalker666)
+  * zh_cn updated (Dawnwalker666 and Suisuroru)
 
 ---
 

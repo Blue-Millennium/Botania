@@ -442,7 +442,7 @@
     "item.botania.dice.poem2": "Das verborgene Gesetz möglicher Ergebnisse,",
     "item.botania.dice.poem3": "Die Zahlen eröffnen einen Tanz.",
 
-    "death.attack.botania-relic": "%s wurde für die Benutzung eines Relikts von jemand Anderem bestraft",
+    "death.attack.botania.relic": "%s wurde für die Benutzung eines Relikts von jemand Anderem bestraft",
     "death.attack.botania.key_explosion": "%2$s überhäufte %1$s mit Schätzen",
 
     "effect.botania.allure.description": "Verdoppelt Angeltempo.",
