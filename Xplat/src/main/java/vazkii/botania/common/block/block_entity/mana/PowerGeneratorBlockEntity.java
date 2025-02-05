@@ -19,7 +19,7 @@ import vazkii.botania.common.block.block_entity.BotaniaBlockEntity;
 import vazkii.botania.xplat.XplatAbstractions;
 
 public class PowerGeneratorBlockEntity extends BotaniaBlockEntity implements ManaReceiver {
-	private static final int MANA_TO_FE = XplatAbstractions.INSTANCE.isForge() ? 80 : 3;
+	private static final int MANA_TO_FE = XplatAbstractions.INSTANCE.isForge() ? 160 : 3;
 	public static final int MAX_ENERGY = 1280 * MANA_TO_FE;
 
 	private static final String TAG_MANA = "mana";
