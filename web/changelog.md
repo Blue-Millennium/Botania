@@ -21,6 +21,7 @@ and start a new "Upcoming" section.
 structure it's placed in, also further customizable with datapacks. Huuuuge
 thanks to Wormbo for a lot of work on this feature!
 * Add: Dispenser planting supports torchflower seeds and pitcher pods
+* Add: Sniffers can dig up their usual seeds on Botania grass variants
 * Change: More readable color in Loonium tooltip
 * Change: Pasture seed spread is no longer restricted to a single Y-level, and replacing existing dirt-like blocks is handled by block tag `botania:pasture_seed_replaceable`
 * Change: Hopperhocks now also apply delay from being planted on podzol or mycelium to picking up recipe outputs, such as from mana infusion
@@ -35,6 +36,8 @@ thanks to Wormbo for a lot of work on this feature!
 * Fix: Redstone comparators no longer read signal strength 0 from special flowers other than the Thermalily
 * Fix: A comparator reading from a Thermalily through a solid block no longer keeps outputting a value after breaking the Thermalily
 * Fix: Potential crash issues in combination with mods that add colors have been resolved
+* Fix: Workaround for missing food properties in some items that are nonetheless flagged as edible
+* Fix: Potential crash with certain modded dispenser variants when trying to attach a mana/corporea spark or applying a Wand of the Forest or Floral Obedience Stick that way
 * Language update:
   * de_de completed (Wormbo, thanks to Kartabass and PssbleTrngle for reviewing)
   * ko_kr updated (UnineVesiKass)
