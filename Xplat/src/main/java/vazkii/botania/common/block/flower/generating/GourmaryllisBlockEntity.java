@@ -29,6 +29,7 @@ import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.common.block.BotaniaFlowerBlocks;
 import vazkii.botania.common.helper.DelayHelper;
+import vazkii.botania.xplat.XplatAbstractions;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -161,8 +162,8 @@ public class GourmaryllisBlockEntity extends GeneratingFlowerBlockEntity {
 	}
 
 	private static int getFoodValue(ItemStack stack) {
-		FoodProperties foodProperties = stack.getItem().getFoodProperties();
-		// greetings to GregTech's Purple Drink, which claims to be edible but does not have food properties
+		// support for Forge's NBT-based food properties
+		FoodProperties foodProperties = XplatAbstractions.INSTANCE.getFoodProperties(stack);
 		int nutrition = foodProperties != null ? foodProperties.getNutrition() : 0;
 		return Math.min(MAX_FOOD_VALUE, nutrition);
 	}

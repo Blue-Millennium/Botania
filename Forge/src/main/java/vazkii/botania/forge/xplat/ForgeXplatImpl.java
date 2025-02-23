@@ -29,6 +29,7 @@ import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BucketItem;
@@ -583,6 +584,12 @@ public class ForgeXplatImpl implements XplatAbstractions {
 			}
 		}
 		return energy;
+	}
+
+	@Nullable
+	@Override
+	public FoodProperties getFoodProperties(ItemStack stack) {
+		return stack.getFoodProperties(null);
 	}
 
 	@Override
