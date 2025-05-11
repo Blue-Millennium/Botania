@@ -16,6 +16,10 @@ public final class BlockEntityConstants {
 			BotaniaFlowerBlocks.POLLIDISIAC, BotaniaFlowerBlocks.RANNUNCARPUS, BotaniaFlowerBlocks.RANNUNCARPUS_CHIBI
 	);
 
+	public static final Set<BlockEntityType<?>> SELF_PHANTOM_INKABLE_BES = ImmutableSet.of(
+			BotaniaBlockEntities.LIGHT_RELAY, BotaniaBlockEntities.PLATFORM, BotaniaBlockEntities.CORPOREA_CRYSTAL_CUBE
+	);
+
 	public static final Set<BlockEntityType<?>> SELF_MANA_TRIGGER_BES = ImmutableSet.of(
 			BotaniaBlockEntities.ANIMATED_TORCH, BotaniaBlockEntities.HOURGLASS, BotaniaBlockEntities.PRISM
 	);

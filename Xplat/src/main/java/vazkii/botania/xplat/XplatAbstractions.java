@@ -52,10 +52,7 @@ import org.jetbrains.annotations.Nullable;
 
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.ServiceUtil;
-import vazkii.botania.api.block.ExoflameHeatable;
-import vazkii.botania.api.block.HornHarvestable;
-import vazkii.botania.api.block.HourglassTrigger;
-import vazkii.botania.api.block.Wandable;
+import vazkii.botania.api.block.*;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.api.corporea.CorporeaRequestMatcher;
 import vazkii.botania.api.corporea.CorporeaSpark;
@@ -130,6 +127,8 @@ public interface XplatAbstractions {
 	ManaTrigger findManaTrigger(Level level, BlockPos pos, BlockState state, @Nullable BlockEntity be);
 	@Nullable
 	Wandable findWandable(Level level, BlockPos pos, BlockState state, @Nullable BlockEntity be);
+	@Nullable
+	PhantomInkableBlock findPhantomInkable(Level level, BlockPos pos, BlockState state, @Nullable BlockEntity be);
 	boolean isFluidContainer(ItemEntity item);
 	boolean extractFluidFromItemEntity(ItemEntity item, Fluid fluid);
 	boolean extractFluidFromPlayerItem(Player player, InteractionHand hand, Fluid fluid);

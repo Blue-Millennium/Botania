@@ -358,6 +358,8 @@ public class FabricCommonInitializer implements ModInitializer {
 		);
 		BotaniaFabricCapabilities.WANDABLE.registerSelf(
 				BlockEntityConstants.SELF_WANDADBLE_BES.toArray(BlockEntityType[]::new));
+		BotaniaFabricCapabilities.PHANTOM_INKABLE.registerSelf(
+				BlockEntityConstants.SELF_PHANTOM_INKABLE_BES.toArray(BlockEntityType[]::new));
 		ItemStorage.SIDED.registerForBlockEntity(FabricRedStringContainerBlockEntity::getStorage, BotaniaBlockEntities.RED_STRING_CONTAINER);
 		ItemStorage.SIDED.registerForBlockEntity(RedStringContainerStorage::new, BotaniaBlockEntities.RED_STRING_DISPENSER);
 

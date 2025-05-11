@@ -95,6 +95,13 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
 						.toArray(Block[]::new)
 		);
 
+		tag(BotaniaTags.Blocks.SHIMMERING_MUSHROOMS).add(
+				ColorHelper.supportedColors()
+						.map(BotaniaBlocks::getMushroom)
+						.sorted(Comparator.comparing(BuiltInRegistries.BLOCK::getKey))
+						.toArray(Block[]::new)
+		);
+
 		tag(BotaniaTags.Blocks.SHINY_FLOWERS).add(
 				ColorHelper.supportedColors()
 						.map(BotaniaBlocks::getShinyFlower)
@@ -204,7 +211,10 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
 				BotaniaBlocks.biomeCobblestoneFungal, BotaniaBlocks.biomeCobblestoneFungalSlab, BotaniaBlocks.biomeCobblestoneFungalStairs, BotaniaBlocks.biomeCobblestoneFungalWall,
 				BotaniaBlocks.biomeChiseledBrickFungal, fungalAltar);
 
-		tag(BotaniaTags.Blocks.HORN_OF_THE_WILD_BREAKABLE).add(Blocks.MOSS_CARPET);
+		tag(BotaniaTags.Blocks.HORN_OF_THE_WILD_BREAKABLE)
+				.add(Blocks.MOSS_CARPET)
+				.addOptional(new ResourceLocation("biomesoplenty:high_grass"))
+				.addOptional(new ResourceLocation("biomesoplenty:high_grass_plant"));
 
 		tag(BlockTags.LEAVES);
 		tag(BotaniaTags.Blocks.HORN_OF_THE_CANOPY_BREAKABLE).addTag(BlockTags.LEAVES);
@@ -218,6 +228,8 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
 		tag(BotaniaTags.Blocks.PASTURE_SEED_REPLACEABLE).add(Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.MYCELIUM);
 
 		tag(BotaniaTags.Blocks.UNETHICAL_TNT_CHECK).addOptional(new ResourceLocation("ae2:tiny_tnt"));
+
+		tag(BotaniaTags.Blocks.SINGLE_ITEM_INSERT).addOptional(new ResourceLocation("quark:crafter"));
 
 		tag(BlockTags.FLOWER_POTS)
 				.add(ColorHelper.supportedColors()

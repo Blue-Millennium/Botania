@@ -17,9 +17,45 @@ and start a new "Upcoming" section.
 
 {% include changelog_header.html version="Upcoming" %}
 Note: Porting efforts to bring Botania to 1.21+ versions of Minecraft (supporting both Fabric and NeoForge) are ongoing.
-We cannot provide any ETA (even a rough one) due to the complexity of the work involved and the somewhat limited amount of time the maintainers can spend on this effort.
+We cannot provide any ETA (even a rough one) due to the complexity of the work involved and the somewhat limited amount
+of time the maintainers are able to spend on this effort. For the time being, updates still target Minecraft 1.20.1.
 
-* (nothing yet)
+* Add: Several missing Forge tags for blocks, items, and entities
+* Fix: The boss bar for the gaia ritual no longer starts full and quickly empties at the start of the spawn sequence
+* Internal: Optimized texture file compression
+* Internal: An old to-do list for the lexicon migration to Patchouli is no longer included in the compiled jars (this caused a harmless log error on startup)
+* Language updates:
+  * zh_cn updated (Dawnwalker666)
+  * zh_tw overhauled (Dawnwalker666, EvanHsieh0415, lakejason0, notlin4, williewillus)
+  * ko_kr updated (UnineVesiKass)
+
+---
+
+{% include changelog_header.html version="1.20.1-448" %}
+
+* Add: Forge storage block tags for mana diamond, dragonstone, blaze mesh, and petal blocks
+* Add: Floral fertilizer can also produce shimmering mushrooms, if applied to mushroom-compatible soil
+* Add: Multi-item filter support via container items (shulker box, flower pouch, etc.) in glow item frames for Hopperhock,
+Rannuncarpus, Corporea Interceptor, and Corporea Funnel; the latter uses item counts as random selection weights
+* Add: Wearing a Manaseer Monocle reveals the contents of a container item in an item frame when looking at the frame
+* Add: An offline backup of the contributors list in the state of the currently installed Botania release will be used for head flowers, if the online copy is unavailable
+* Add: Player statistics now track items crafted via petal apothecary, mana infusion, runic altar, terrestrial agglomeration plate, and manual crafty crate activation
+* Add: Dispensers can now apply phantom ink to blocks (entities like sparks are not yet supported)
+* Add: Phantom ink can be applied to corporea cubes to hide the item count
+* Change: Hopperhock and Corporea Funnel better support Quark's backport of the vanilla Crafter, causing items to be
+distributed across the available slots, rather than putting the entire stack into a single slot
+* Change: Horn/Drum of the Wild also breaks Biomes O' Plenty's high grass by default
+* Change: Flügel Tiara sprint dash can be suppressed by carrying an active Stone of Temperance
+* Fix: Dandelifeon sometimes generated a randomly greater amount of mana than intended when on enchanted soil
+* Fix: Trinkets could not be equipped via right-click (Abbie)
+* Fix: Rod of the Highlands now includes placement sound and particles if not used on another solid block
+* Fix: Potted motif flowers are rendered using the correct textures
+* Fix (Fabric): The loot table for Elementium Axe beheading is no longer evaluated independently from the killed mob's
+own loot table. This hopefully fixes loot doubling issues with LootJS.
+* Fix: Phantom inked luminizers now save properly
+* Language update:
+  * ko_kr updated (UnineVesiKass)
+* Internal: Add PhantomInkableBlock interface for blocks that can be phantom inked
 
 ---
 

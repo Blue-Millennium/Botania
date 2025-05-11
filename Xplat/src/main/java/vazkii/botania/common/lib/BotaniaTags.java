@@ -41,6 +41,7 @@ public class BotaniaTags {
 
 		public static final TagKey<Item> MYSTICAL_FLOWERS = tag("mystical_flowers");
 		public static final TagKey<Item> DOUBLE_MYSTICAL_FLOWERS = tag("double_mystical_flowers");
+		public static final TagKey<Item> SHIMMERING_MUSHROOMS = tag("shimmering_mushrooms");
 
 		/**
 		 * Items in this tag can be specified as contributor headflowers
@@ -153,6 +154,7 @@ public class BotaniaTags {
 		public static final TagKey<Block> MYSTICAL_FLOWERS = tag("mystical_flowers");
 		public static final TagKey<Block> SHINY_FLOWERS = tag("shiny_flowers");
 		public static final TagKey<Block> DOUBLE_MYSTICAL_FLOWERS = tag("double_mystical_flowers");
+		public static final TagKey<Block> SHIMMERING_MUSHROOMS = tag("shimmering_mushrooms");
 
 		public static final TagKey<Block> SPECIAL_FLOWERS = tag("special_flowers");
 		public static final TagKey<Block> MINI_FLOWERS = tag("mini_flowers");
@@ -273,6 +275,12 @@ public class BotaniaTags {
 		 * to this tag if their implementation does not extend {@link net.minecraft.world.level.block.TntBlock}.
 		 */
 		public static final TagKey<Block> UNETHICAL_TNT_CHECK = tag("unethical_tnt_check");
+
+		/**
+		 * Blocks in this tag work better for inserting items if they don't receive more than one item at a time.
+		 * Example: The vanilla crafter block, which selectively opens inventory slots to distribute matching items.
+		 */
+		public static final TagKey<Block> SINGLE_ITEM_INSERT = tag("single_item_insert");
 
 		private static TagKey<Block> tag(String name) {
 			return TagKey.create(Registries.BLOCK, prefix(name));

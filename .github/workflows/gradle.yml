@@ -21,7 +21,9 @@ jobs:
           ~/.gradle/caches
           ~/.gradle/wrapper
           ./.gradle/loom-cache/remapped-mods
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle', '**/gradle-wrapper.properties') }}
+          ./Forge/build/moddev
+          ./Xplat/build/moddev
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle', './gradle.properties', './settings.gradle', '**/gradle-wrapper.properties') }}
     - name: Check lang files
       run: ./scripts/check_lang.sh
     - name: Calculate artifact names

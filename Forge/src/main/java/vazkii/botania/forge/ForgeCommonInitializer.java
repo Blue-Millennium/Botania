@@ -64,6 +64,7 @@ import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.BotaniaForgeCapabilities;
 import vazkii.botania.api.BotaniaRegistries;
 import vazkii.botania.api.block.HornHarvestable;
+import vazkii.botania.api.block.PhantomInkableBlock;
 import vazkii.botania.api.block.Wandable;
 import vazkii.botania.api.item.AvatarWieldable;
 import vazkii.botania.api.item.BlockProvider;
@@ -632,6 +633,11 @@ public class ForgeCommonInitializer {
 		if (BlockEntityConstants.SELF_WANDADBLE_BES.contains(be.getType())) {
 			e.addCapability(prefix("wandable"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.WANDABLE,
 					(Wandable) be));
+		}
+
+		if (BlockEntityConstants.SELF_PHANTOM_INKABLE_BES.contains(be.getType())) {
+			e.addCapability(prefix("phantom_inkable"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.PHANTOM_INKABLE,
+					(PhantomInkableBlock) be));
 		}
 
 		if (be instanceof RedStringContainerBlockEntity container) {
