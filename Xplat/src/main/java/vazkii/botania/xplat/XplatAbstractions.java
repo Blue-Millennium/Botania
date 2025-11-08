@@ -210,6 +210,7 @@ public interface XplatAbstractions {
 	int transferEnergyToNeighbors(Level level, BlockPos pos, int energy);
 	@Nullable
 	FoodProperties getFoodProperties(ItemStack stack);
+	boolean canToolLightFire(ItemStack stack);
 
 	// Red string container
 	boolean isRedStringContainerTarget(BlockEntity be);
@@ -228,4 +229,8 @@ public interface XplatAbstractions {
 	WoodType registerWoodType(String name, BlockSetType setType, SoundType soundType, SoundType hangingSignSoundType, SoundEvent fenceGateClose, SoundEvent fenceGateOpen);
 
 	XplatAbstractions INSTANCE = ServiceUtil.findService(XplatAbstractions.class, null);
+
+	static XplatAbstractions instance() {
+		return INSTANCE;
+	}
 }

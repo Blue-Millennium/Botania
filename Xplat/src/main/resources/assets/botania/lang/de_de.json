@@ -150,7 +150,7 @@
 
 
 
-    
+
 
 
 
@@ -1383,7 +1383,7 @@
     "item.botania.brown_petal": "Mystisches Braunes Blütenblatt",
     "item.botania.green_petal": "Mystisches Grünes Blütenblatt",
     "item.botania.red_petal": "Mystisches Red Blütenblatt",
-    "item.botania.black_petal": "Mystisches Black Blütenblatt",
+    "item.botania.black_petal": "Mystisches Schwarzes Blütenblatt",
     "item.botania.twig_wand": "Stab des Waldes",
     "item.botania.dreamwood_wand": "Stab des Elfenwaldes",
     "item.botania.manasteel_ingot": "Manastahlbarren",
@@ -2886,7 +2886,7 @@
     "botania.tagline.terraPick": "Aufrüstbare Spitzhacke mit großem Wirkbereich",
     "botania.page.terraPick0": "Der $(item)Terra-Trümmerer$(0) ist ein Werkzeug, das dank der Menge von $(l:basics/terrasteel)$(item)Terrastahl$(0)$(/l) in seinem Rezept absolut groteske $(thing)Mana$(0)beträge absorbieren kann.$(p)Er funktioniert wie eine $(l:mana/mana_tablet)$(item)Manatafel$(0)$(/l) wenn er in ein $(l:mana/pool)$(item)Manabecken$(0)$(/l) geworfen wird. Das absorbierte $(thing)Mana$(0) kann jedoch nicht wieder freigesetzt werden, so dass er nicht als Speichermedium brauchbar ist.",
     "botania.page.terraPick1": "Aus der gespeicherten $(thing)Mana$(0)menge leitet sich sein $(thing)Rang$(0) ab. Der Rang-Fortschritt ist wie folgt: $(thing)D$(0), $(thing)C$(0), $(thing)B$(0), $(thing)A$(0), $(thing)S$(0) und $(thing)SS$(0), wobei $(thing)D$(0) der niedrigste Rang ist und $(thing)SS$(0) der höchste.$(p)Der benötigte $(thing)Mana$(0)betrag, um von einem Rang zum nächsten aufzusteigen erhöht sich exponenziell mit dem Rang. Um am Anfang von $(thing)D$(0) nach $(thing)C$(0) zu kommen, braucht der Trümmerer den Inhalt eines $(l:mana/pool)$(item)Verdünnten Manabeckens$(0)$(/l).",
-    "botania.page.terraPick2": "Um von Rang $(thing)C$(0) nach Rang $(thing)B$(0) aufzusteigen wird bereits ein volles $(l:mana/pool)$(item)Manabecken$(0)$(/l) benötigt, danach erhöhen sich die Mengen jeweils auf das Zehnfache pro Rang bis hin zu $(thing)SS$(0).$(p)Der Rang des Werkzeugs ändert nicht seine Geschwindigkeit. Stattdessen erhöht sich die Reichweite seiner $(thing)Aktivierten Fähigkeit$(0).$(p)Ein Schleich-Rechtsklick in der Luft schaltet die Fähigkeit des Trümmerers an oder aus.",
+    "botania.page.terraPick2": "Um von Rang $(thing)C$(0) nach Rang $(thing)B$(0) aufzusteigen wird bereits ein volles $(l:mana/pool)$(item)Manabecken$(0)$(/l) benötigt, danach erhöhen sich die Mengen jeweils auf das Zehnfache pro Rang bis hin zu $(thing)SS$(0).$(p)Der Rang des Werkzeugs ändert nicht seine Geschwindigkeit. Stattdessen erhöht sich die Reichweite seiner $(thing)Aktivierten Fähigkeit$(0).$(p)Ein Schleich-Rechtsklick schaltet die Fähigkeit des Trümmerers an oder aus.",
     "botania.page.terraPick3": "Wenn die Fähigkeit des Trümmerers aktiviert ist, kann dieser viele Blöcke auf einer breiten Fläche abbauen. Auf Rang $(thing)C$(0) baut er eine schmale Säule von Blöcken ab. Auf Rang $(thing)B$(0) erweitert sich die Form zu einem Quadrat, dessen Fläche sich bei höheren Rängen vergrößert. Ein Rang-$(thing)D$(0)-Werkzeug hat die Fähigkeit nicht. Wenn der Trümmerer aktiv ist, konsumiert er sein internes $(thing)Mana$(0) wenn $(l)nicht$() gegraben wird.",
     "botania.page.terraPick4": "Das Werkzeug nimmt für jeden einzelnen Block Schaden, so dass ein guter $(thing)Mana$(0)vorrat im Inventar des Nutzers ein Muss ist: Der Trümmerer braucht $(thing)Mana$(0) für die Haltbarkeit, wie $(l:tools/mana_gear)$(item)Manastahlwerkzeuge$(0)$(/l).$(p)Wenn der Trümmerer auf dem Boden liegt, wird er nicht despawnen.",
     "botania.page.terraPick5": "WIR GRABEN IN DER DATENBANK WOW WOW",
@@ -3193,7 +3193,7 @@
     "botania.page.corporeaIndex2": "Anfragen können quantifiziert sein: Zum Beispiel liefert die Anfrage \"10 Apfel\" bis zu 10 $(item)Äpfel$(0) auf einmal. Das Wort \"this\" wird als der Gegenstand interpretiert, den der Spieler gerade hält. Vorangestelltes oder angehängtes \"...\", \"~\", \"+\" oder \"?\" an einer Anfrage sucht stattdessen Namen, welche die Zeichenfolge $(o)enthalten$(): Beispielsweise kann \"eisen...\" jeden Gegenstand mit \"eisen\" im Namen liefern.",
     "botania.page.corporeaIndex3": "Ein \"*\" irgendwo in der Zeichenfolge repräsentiert eine beliebige Anzahl von Zeichen. Eine Anfrage nach \"Nethe*ck\" könnte etwas $(item)Netherrack$(0), einen $(item)Netheritblock$(0), oder sogar einen in \"Netheck\" umbenannten Gegenstand liefern.$(p)Beachte, dass nach \"*eisen*\" zu fragen äquivalent zu \"eisen...\" ist, und dass Anfragen nach \"*\" alles liefern könnten.",
     "botania.page.corporeaIndex4": "Der Index versteht nur einfache $(o)englische$() Pluralformen mit den Suffixen \"-s\", \"-es\" oder \"-ies\"), aber akzeptiert auch Singularformen bei Anfragen für mehrere Gegenstände (er versteht \"10 Apfel\").$(p)\"10 of this\" liefert 10 Gegenstände, deren Name dem gehaltenen Gegenstand entspricht.",
-    "botania.page.corporeaIndex5": "Englische Zahlworte sind möglich: \"a stack of Apfel\", \"2 stacks of Apfel\", \"2 stacks and 20 Apfel\", \"half a stack of Apfel\", oder \"a dozen Apfel\" werden verstanden.$(p)Der Index kann Anfragen mit gemischter Ausführlichkeit verarbeiten: \"2x stacks and 20x of Apfel\", \"2 stack 2 Afpel\" und \"2 stacks + 2 Apfel\" werden auf die gleiche Weise beantwortet.",
+    "botania.page.corporeaIndex5": "Englische Zahlworte sind möglich: \"a stack of Apfel\", \"2 stacks of Apfel\", \"2 stacks and 20 Apfel\", \"half a stack of Apfel\", oder \"a dozen Apfel\" werden verstanden.$(p)Der Index kann Anfragen mit gemischter Ausführlichkeit verarbeiten: \"2x stacks and 2x of Apfel\", \"2 stack 2 Afpel\" und \"2 stacks + 2 Apfel\" werden auf die gleiche Weise beantwortet.",
     "botania.page.corporeaIndex6": "Die Wörter \"all\" oder \"every\" fordern alle verfügbaren Gegenstände im Netzwerk an. Zum Beispiel liefert \"all Apfel\" jeden einzelnen verfügbaren Apfel (sowie alle Gegenstände, die in \"Apfel\" umbenannt wurden) aus dem Netzwerk.$(p)Die Wörter \"count\", \"show\", \"display\" und \"tell\" liefern keine Gegenstände, sondern zählen sie nur.",
     "botania.page.corporeaIndex7": "Wenn man in der Nähe eines $(item)Corporea-Index$(0) ein Inventar (oder Rezept) betrachtet, fragt ein Drücken von [$(k:botania_corporea_request)], während auf einen Gegenstand gezeigt wird, eine Kopie von diesem an.$(p)Hält man zusätzlich Umschalt, wird ein ganzer Stapel angefragt, mit Strg ein halber Stapel, und mit beiden Tasten ein viertel Stapel.",
     "botania.page.corporeaIndex8": "Ein gewisser Magischer noch dazu",
@@ -3608,7 +3608,8 @@
     "botania.entry.headCreating": "Kopfherstellung",
     "botania.tagline.headCreating": "Herstellen des Kopfes beliebiger Spieler",
     "botania.page.headCreating0": "Ein oft angewandter Zauberspruch der Elfen ist die Nutzung einiger Ressourcen und eines $(item)Namensschilds$(0), um ein Stück $(l:basics/pure_daisy)$(item)Lebestein$(0)$(/l) in den Kopf des benannten $(thing)Spielers$(0) zu verwandeln.$(p)Seine genaue Funktionsweise ist unbekannt, aber der Spruch scheint recht einfach mit einem $(l:basics/rune_altar)$(item)Runenaltar$(0)$(/l) replizierbar zu sein.",
-    "botania.page.headCreating2": "Ein Teil der $(thing)Minecraft$(0)-Gemeinde (huch, vierte Wand) hat sich der Herstellung von Köpfen verschrieben, die als Dekoration benutzt werden können. Für begeisterte Dekorateure gibt es Webseiten mit Sammlungen solcher Köpfe.",
+    "botania.page.headCreating3": "Ersetzt man das Namensschild durch ein $(item)Beschriebenes Buch$(0), können dem Prozess noch mehr Informationen zugeführt werden:$(p)Ist der Geheimcode für einen vergangenen $(thing)Skin$(0) in der obskuren Sprache $(thing)Base64$(0) bekannt, kann er in das Buch geschrieben werden, um dieses frühere Aussehen des $(thing)Spielerkopfes$(0) zu beschwören.",
+    "botania.page.headCreating2": "Ein Teil der $(thing)Minecraft$(0)-Gemeinde (huch, vierte Wand) hat sich der Herstellung von Köpfen verschrieben, die als Dekoration benutzt werden können. Für begeisterte Dekorateure gibt es Webseiten mit Sammlungen solcher Köpfe.$(p)Einige Sites bieten auch Befehle mit den notwendigen Base64-codierten Textur-Referenzdaten für die Buchversion des Rezepts. Die Skin-URL oder der Skin-Hash funktionieren ebenfalls.",
     "botania.page.headCreating1": "Bring deinen Kopf ins Spiel",
 
     "botania.entry.azulejo": "Azulejo",

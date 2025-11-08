@@ -18,16 +18,85 @@ and start a new "Upcoming" section.
 {% include changelog_header.html version="Upcoming" %}
 Note: Porting efforts to bring Botania to 1.21+ versions of Minecraft (supporting both Fabric and NeoForge) are ongoing.
 We cannot provide any ETA (even a rough one) due to the complexity of the work involved and the somewhat limited amount
-of time the maintainers are able to spend on this effort. For the time being, updates still target Minecraft 1.20.1.
+of time the maintainers are able to spend on this effort.
+In the meantime, Botania for Minecraft 1.20.1 may still receive updates for bug fixes.
+
+* Add: Extrapolated Bucket can void fluids from modded blocks that support draining fluids into items used on them
+* Change: Terra Shatterer activation rules have been adjusted
+  * With an item in the off-hand that item gets priority, unless sneaking and not aiming at any blocks
+  * With an empty off-hand, sneak right-click toggles active state, unless at rank D (i.e. no stored mana)
+  * If at rank D or not sneaking, Manasteel pickaxe logic for torch placing applies
+* Change: Rod of the Skies acceleration for elytra gliding works more like using a fireworks rocket
+* Change: Several mods have been marked as potentially conflicting on Fabric. When trying to run them together with
+  Botania, Fabric generates a warning.
+  (The same issues exist with their Forge versions, but Forge does not support this kind of declaration.)
+  * Fast Item Frames – It replaces item frame entities with blocks, where possible.
+    With it present, Hopperhock, Rannuncarpus, and various Corporea features no longer work properly.
+  * Open Parties and Claims – Its default configuration disallows unowned projectiles in claimed chunks, completely
+    breaking mana spreaders. From Botania's side there is no good way to opt in, except to change semantics in regards
+    to mana burst ownership, which would serve no purpose for Botania itself whatsoever.
+* Fix: Don't let Alfheim portal grab items in the tick it shuts down (e.g. for gluten reasons)
+* Fix: Astrolabe no longer attempts to place blocks in the player's head location while underwater
+* Fix: Mana bursts going through a nether portal could cause lag spikes
+* Fix: Potential client memory leak in ManaNetworkHandler
+* Fix: Guardian of Gaia stopped teleporting until getting hit after a world reload
+
+---
+
+{% include changelog_header.html version="1.20.1-450" %}
+
+* Add: Support for Quark's attribute tooltips, displaying the Pixie Spawn Chance on Elementium armor and sword in icon form
+* Fix: Botania's Creative inventory tab no longer randomly shows up among the vanilla tabs
+* Fix: Rod of the Sea and Extrapolated Bucket may vanish when interacting with cauldrons
+* Fix: Partially reverted an internal change that needlessly caused an incompatibility with existing versions of ExtraBotany
+* Fix: Ensure spark textures and animated Tiara wings are animated in the presence of Sodium or its various Forge ports
+
+---
+
+{% include changelog_header.html version="1.20.1-449" %}
 
 * Add: Several missing Forge tags for blocks, items, and entities
+* Add: Munchdew displays particles while in cooldown, similar to a Thermalily (this used to be a thing a long time ago already, but somehow got lost)
+* Add: Creating past versions of player heads is now possible by replacing the name tag with a written book, containing
+  the base64 texture reference data you can find in the player head commands provided by various player skin websites
+* Add: While not in Creative mode, the "Pick Block" feature (usually middle mouse button) can also select certain block
+  providers, such as the Rod of the Lands or Black Hole Talisman, if the targeted block's item itself is not available
+* Add: Cauldrons can be filled with the Rod of the Seas (as if using a water bucket) and emptied with the
+  Extrapolated Bucket (as if using an empty bucket on a full version of the cauldron)
+* Add: Short descriptions for lexicon categories (based on contributions by bellasalmonella)
+* Add: Incense plate supports fire charges and custom igniters (e.g. Tinkers Flint and Brick) to light the incense stick
+* Change: Sparks can no longer be hit by projectiles other than mana bursts
+* Change: Fake players using a wand of the forest on either type of spark are now treated as if the player was sneaking, since that is likely the intended interaction
+* Change: Reach with the Worldshaper's Astrolabe is now affected by effects that change the player's reach, such as the Ring of Far Reach
 * Fix: The boss bar for the gaia ritual no longer starts full and quickly empties at the start of the spawn sequence
+* Fix: Potential NullPointerException in Bergamute's SoundEngineMixin (LostLuma)
+* Fix: Potential divide-by-zero error related to Runic Altar wand HUD rendering (YukkuriC)
+* Fix: Ancient will recipe accepting additional items (YukkuriC)
+* Fix: Tiny Potato holding mob heads backwards
+* Fix: Portal explosion actually breaks blocks again, as intended
+* Fix: Remaining content in brew vials/flasks and mana bottles would not display properly
+* Fix: Monocle item frame overlay did not properly expand background frame to account for multi-row contained items display
+* Fix: Some spark transfers towards a pool linked with a Mana Mirror sometimes shut down and fail to start up again when the pool is not full anymore
+* Fix: Rod of the Lands/Depths behaved differently than a block of dirt or cobblestone when aiming at a replaceable block, such as grass or fern (NEstoll)
+* Fix: Unbreaking enchantment properly reduces mana consumption for preventing damage to mana-repairable equipment (NEstoll)
+* Fix: When slots of a Crafty Crate get locked while containing any items, those items are forcibly ejected
 * Internal: Optimized texture file compression
 * Internal: An old to-do list for the lexicon migration to Patchouli is no longer included in the compiled jars (this caused a harmless log error on startup)
+* Internal: Changed the way platform-specific loading of API implementations is handled to hopefully prevent a loading
+  failure that has popped up especially in Patchouli on NeoForge but apparently can also happen to Botania on Forge
+* Recipe changes:\
+  (only significant uses of item tags have been added, a more thorough use of tags is postponed until 1.21)
+  * On Forge, any recipe that uses colorless glass blocks or panes is now defined using the corresponding item tags
+  * Lens combining uses the slimeballs item tag on Forge
+  * Phantom Ink and Floral Fertilizer recipes use the dye item tags on both Forge and Fabric
+  * The Phantom Ink recipe uses the any-color glass item tags on both Forge and Fabric
 * Language updates:
-  * zh_cn updated (Dawnwalker666)
+  * tr_tr added (RuyaSavascisi)
+  * pt_br overhauled (Coffee-0xFF)
+  * ru_ru overhauled (kkylern)
   * zh_tw overhauled (Dawnwalker666, EvanHsieh0415, lakejason0, notlin4, williewillus)
   * ko_kr updated (UnineVesiKass)
+  * zh_cn updated (Dawnwalker666)
 
 ---
 

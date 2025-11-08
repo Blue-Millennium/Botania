@@ -40,6 +40,7 @@ import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.fluid.base.FullItemFluidStorage;
 import net.fabricmc.fabric.api.transfer.v1.item.ItemStorage;
+import net.fabricmc.fabric.api.transfer.v1.storage.base.InsertionOnlyStorage;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
@@ -62,7 +63,9 @@ import vazkii.botania.api.BotaniaFabricCapabilities;
 import vazkii.botania.api.BotaniaRegistries;
 import vazkii.botania.api.block.HornHarvestable;
 import vazkii.botania.api.brew.Brew;
+import vazkii.botania.api.corporea.CorporeaHelper;
 import vazkii.botania.api.mana.ManaCollisionGhost;
+import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.api.mana.ManaNetworkCallback;
 import vazkii.botania.client.fx.BotaniaParticles;
 import vazkii.botania.common.BotaniaStats;
@@ -149,6 +152,11 @@ public class FabricCommonInitializer implements ModInitializer {
 	}
 
 	private void coreInit() {
+		// ensure API implementations are loaded
+		BotaniaAPI.LOGGER.debug("API instances: {}",
+				List.of(BotaniaAPI.instance(), XplatAbstractions.instance(),
+						CorporeaHelper.instance(), ManaItemHandler.instance()));
+
 		FiberBotaniaConfig.setup();
 		EquipmentHandler.init();
 		FabricPacketHandler.init();
@@ -276,9 +284,13 @@ public class FabricCommonInitializer implements ModInitializer {
 			};
 
 	private void registerCapabilities() {
+		//noinspection UnstableApiUsage
 		FluidStorage.ITEM.registerForItems((stack, context) -> new FullItemFluidStorage(context, Items.BOWL,
 				FluidVariant.of(Fluids.WATER), FluidConstants.BLOCK),
 				BotaniaItems.waterBowl);
+		//noinspection UnstableApiUsage
+		FluidStorage.ITEM.registerForItems((itemStack, context) -> (InsertionOnlyStorage<FluidVariant>) (resource, maxAmount, transaction) -> Math.min(FluidConstants.BLOCK, maxAmount),
+				BotaniaItems.openBucket);
 
 		BotaniaFabricCapabilities.AVATAR_WIELDABLE.registerForItems((stack, c) -> new LandsRodItem.AvatarBehavior(), BotaniaItems.dirtRod);
 		BotaniaFabricCapabilities.AVATAR_WIELDABLE.registerForItems((stack, c) -> new PlentifulMantleRodItem.AvatarBehavior(), BotaniaItems.diviningRod);
